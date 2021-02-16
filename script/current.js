@@ -12,26 +12,24 @@ btn.forEach((item, num) => {
   });
 });
 
-function getRequest(method, url){
-    return fetch(url).then(response => {
-        return response.json() 
+// function getRequest(method, url){
+//     return fetch(url).then(response => {
+//         return response.json() 
+//     })
+// }
+
+// getRequest('GET', requestURL)
+//     .then(data => console.log(data))
+//     .catch(er => console.log(er))
+
+async function test() {
+    await fetch("https://www.cbr-xml-daily.ru/daily_json.js", {
+      method: "GET",
+      headers: {
+        "Content-Type": "text/plain"
+      }
     })
-}
-
-getRequest('GET', requestURL)
-    .then(data => console.log(data))
-    .catch(er => console.log(er))
-
-let myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-
-fetch(requestURL, requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
+  }
