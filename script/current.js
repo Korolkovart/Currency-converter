@@ -1,6 +1,6 @@
 const heart = document.querySelectorAll(".heart"),
   btn = document.querySelectorAll(".btn"),
-  requestURL = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=16/02/2021';
+  requestURL = 'https://www.cbr-xml-daily.ru/daily_json.js';
 
 btn.forEach((item, num) => {
   item.addEventListener("click", () => {
@@ -14,7 +14,7 @@ btn.forEach((item, num) => {
 
 function getRequest(method, url){
     return fetch(url).then(response => {
-        return response.text()
+        return response.json()
     })
 }
 
