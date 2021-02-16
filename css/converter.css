@@ -28,6 +28,12 @@ body {
   height: 100vh;
   background-color: #c0c0c0;
 }
+.current-link{
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+  }
+  
 .container {
   display: flex;
   justify-content: center;
