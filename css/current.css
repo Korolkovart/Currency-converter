@@ -24,13 +24,15 @@ body {
   line-height: 1.429;
   color: black;
 }
-.current-link{
+.current-link {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
-
 }
-
+.current-link:hover {
+  color: rgb(1, 11, 102);
+  text-decoration: underline;
+}
 .current {
   height: 100vh;
   background-color: #adadad;

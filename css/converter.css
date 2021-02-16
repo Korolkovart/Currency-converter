@@ -28,12 +28,16 @@ body {
   height: 100vh;
   background-color: #c0c0c0;
 }
-.current-link{
-    text-decoration: none;
-    cursor: pointer;
-    color: inherit;
-  }
-  
+.current-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+.current-link:hover {
+  color: rgb(1, 11, 102);
+  text-decoration: underline;
+}
+
 .container {
   display: flex;
   justify-content: center;
