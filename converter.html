@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="css/converter.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/converter.css" />
+  </head>
+  <body>
     <div class="converter">
-        <a class="current-link" href="index.html">Текущие значения ></a>
-        <div class="container">
-            <div class="converter__block">
-                <input  class="converter__input" type="text" placeholder="Введите значение">
-                <input class="converter__input" type="text" >
-                <button class="converter__btn btn">Ок</button>
-            </div>
-           
+      <a class="current-link" href="index.html">Текущие значения ></a>
+      <div class="container">
+        <div class="converter__block">
+          <form action="#" class="converter__form">
+            <input
+              class="converter__input"
+              type="text"
+              placeholder="Введите сумму в руб"
+            />
+            <select
+              name="converter-selector"
+              class="converter-items"
+              id="currency-converter"
+            >
+            </select>
+            <input class="converter__input" type="text" readonly />
+
+            <button class="converter__btn btn" type="submit">Ок</button>
+          </form>
         </div>
-       
+      </div>
     </div>
-    
-    <script src="script/converter.js"></script>
-</body>
+
+    <script src="script/current.js"></script>
+  </body>
 </html>

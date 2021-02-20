@@ -1,37 +1,77 @@
 const heart = document.querySelectorAll(".heart"),
   btn = document.querySelectorAll(".btn"),
-  requestURL = 'https://www.cbr-xml-daily.ru/daily_json.js';
+  requestURL = "https://www.cbr-xml-daily.ru/daily_json.js";
+
+let converterItems = document.querySelector(".converter-items");
+
+console.log(converterItems);
 
 btn.forEach((item, num) => {
   item.addEventListener("click", () => {
     heart.forEach((i, n) => {
-        if (num == n) {
+      if (num == n) {
         i.classList.toggle("clicked");
       }
     });
   });
 });
 
-// function getRequest(method, url){
-//     return fetch(url).then(response => {
-//         return response.json() 
-//     })
-// }
+function getRequest(method, url) {
+  return fetch(url).then((response) => {
+    return response.json();
+  });
+}
 
-// getRequest('GET', requestURL)
-//     .then(data => console.log(data))
-//     .catch(er => console.log(er))
+let a = getRequest("GET", requestURL)
+  .then(
+    (data) => {
+      let i = data.Valute;
 
-async function test() {
-    await fetch("https://www.cbr-xml-daily.ru/daily_json.js", {
-      method: "GET",
-      headers: {
-        "Content-Type": "text/plain"
+      let input = document.querySelectorAll(".converter__input")[0];
+      let result = document.querySelectorAll(".converter__input")[1];
+      let converterBtn = document.querySelector(".converter__btn");
+      let converterForm = document.querySelector('.converter__form');
+
+      for (let key in i) {
+        let itemOption = document.createElement("option");
+        let converterItems = document.querySelector(".converter-items");
+
+        itemOption.innerHTML = i[key].CharCode;
+        itemOption.value = i[key].Value;
+        converterItems.append(itemOption);
+
+
+        // converterBtn
+        converterForm.addEventListener("submit", (event) => {
+            event.preventDefault()
+
+          let selected = Array.from(converterItems.options)
+            .filter((option) => option.selected)
+            .map((option) => option.value);
+
+            let preResult = selected[0] * input.value;
+            result.value = (preResult).toFixed(2)
+        });
       }
-    })
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-  }
+    }
+  )
+  .catch((er) => console.log(er));
 
-  
+// async function getCurrency() {
+//     await fetch(requestURL, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "text/plain",
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((result) => console.log(result.Valute))
+//       .catch((error) => console.log("error", error));
+
+//   }
+//   getCurrency();
+
+//   let res = fetch(requestURL).then((response) => response.json());
+//   res.Valute;
+
+//   console.log(res)
