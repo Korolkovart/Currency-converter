@@ -4,7 +4,6 @@ const heart = document.querySelectorAll(".heart"),
 
 let converterItems = document.querySelector(".converter-items");
 
-console.log(converterItems);
 
 btn.forEach((item, num) => {
   item.addEventListener("click", () => {
@@ -29,10 +28,16 @@ let a = getRequest("GET", requestURL)
 
       let input = document.querySelectorAll(".converter__input")[0];
       let result = document.querySelectorAll(".converter__input")[1];
-      let converterBtn = document.querySelector(".converter__btn");
       let converterForm = document.querySelector('.converter__form');
 
+        
+
+
       for (let key in i) {
+
+        // i[key].like = false
+        console.log(key)
+
         let itemOption = document.createElement("option");
         let converterItems = document.querySelector(".converter-items");
 
@@ -41,7 +46,6 @@ let a = getRequest("GET", requestURL)
         converterItems.append(itemOption);
 
 
-        // converterBtn
         converterForm.addEventListener("submit", (event) => {
             event.preventDefault()
 

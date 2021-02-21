@@ -38,22 +38,43 @@ body {
   text-decoration: underline;
 }
 
+.converter__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .converter__input {
+  margin-bottom: 15px;
   padding: 5px 0 5px 10px;
   border: none;
   border-radius: 2px;
   outline: none;
 }
+
+.converter-items {
+  margin-bottom: 15px;
+  min-width: 157px;
+  padding: 5px 0;
+  text-align: center;
+}
+
 .btn {
+  min-width: 155px;
   padding: 5px 10px 5px 10px;
   border: none;
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
   outline: none;
   cursor: pointer;
+}
+
+.btn:hover{
+  background-color: rgb(56, 56, 255);
+  color: #f9f9f9;
 }

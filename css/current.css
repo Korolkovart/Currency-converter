@@ -44,12 +44,15 @@ body {
   flex-direction: column;
 }
 .current-grid{
-    min-width: 500px;
+    min-width: 300px;
 }
 .main{
-    width: 360px;
+    /* width: 360px; */
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+}
+.main__currency{
+  margin-right: 30px;
 }
 .main__currency, .main__value{
     font-size: 22px;
@@ -70,7 +73,12 @@ body {
 }
 .data {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+.data-info{
+  display: flex;
+  justify-content: space-around;
 }
 .data__currency, .data__value{
     font-size: 22px;
