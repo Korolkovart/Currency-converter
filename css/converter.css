@@ -51,21 +51,21 @@ body {
 }
 .converter__input {
   margin-bottom: 15px;
-  padding: 5px 0 5px 10px;
+  padding: 5px 0 5px 13px;
   border: none;
   border-radius: 2px;
   outline: none;
 }
 
 .converter-items {
+  min-width: 151px;
   margin-bottom: 15px;
-  min-width: 157px;
   padding: 5px 0;
   text-align: center;
 }
 
 .btn {
-  min-width: 155px;
+  min-width: 151px;
   padding: 5px 10px 5px 10px;
   border: none;
   background-color: rgb(255, 255, 255);
