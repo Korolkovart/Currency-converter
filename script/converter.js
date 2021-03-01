@@ -36,7 +36,7 @@ let a = getRequest("GET", requestURL)
       for (let key in i) {
 
         // i[key].like = false
-        console.log(key)
+        // console.log(key)
 
         let itemOption = document.createElement("option");
         let converterItems = document.querySelector(".converter-items");
