@@ -24,7 +24,7 @@ function getRequest(method, url) {
 let a = getRequest("GET", requestURL)
   .then(
     (data) => {
-      let i = data.Valute;
+      let request = data.Valute;
 
       let input = document.querySelectorAll(".converter__input")[0];
       let result = document.querySelectorAll(".converter__input")[1];
@@ -33,16 +33,13 @@ let a = getRequest("GET", requestURL)
         
 
 
-      for (let key in i) {
-
-        // i[key].like = false
-        // console.log(key)
+      for (let key in request) {
 
         let itemOption = document.createElement("option");
         let converterItems = document.querySelector(".converter-items");
 
-        itemOption.innerHTML = i[key].CharCode;
-        itemOption.value = i[key].Value;
+        itemOption.innerHTML = request[key].CharCode;
+        itemOption.value = request[key].Value;
         converterItems.append(itemOption);
 
 
